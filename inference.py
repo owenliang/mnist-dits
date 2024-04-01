@@ -1,6 +1,5 @@
 import torch 
 from config import T
-from dits import DiTs
 from dit import DiT
 import matplotlib.pyplot as plt 
 from diffusion import *

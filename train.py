@@ -5,14 +5,12 @@ from diffusion import forward_add_noise
 import torch 
 from torch import nn 
 import os
-from dits import DiTs
 from dit import DiT
 
 DEVICE='cuda' if torch.cuda.is_available() else 'cpu' # 设备
 
 dataset=MNIST() # 数据集
 
-#model=DiTs().to(DEVICE)
 model=DiT(img_size=28,in_channels=1).to(DEVICE) # 模型
 
 try:    # 加载模型
