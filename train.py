@@ -11,7 +11,7 @@ DEVICE='cuda' if torch.cuda.is_available() else 'cpu' # 设备
 
 dataset=MNIST() # 数据集
 
-model=DiT(img_size=28,in_channels=1).to(DEVICE) # 模型
+model=DiT(img_size=28,patch_size=4,channel=1,emb_size=64,label_num=10,dit_num=3,head=4).to(DEVICE) # 模型
 
 try:    # 加载模型
     model.load_state_dict(torch.load('model.pth'))

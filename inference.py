@@ -42,7 +42,7 @@ def backward_denoise(model,x,y):
             steps.append(x)
     return steps
 
-model=DiT(img_size=28,in_channels=1).to(DEVICE) # 模型
+model=DiT(img_size=28,patch_size=4,channel=1,emb_size=64,label_num=10,dit_num=3,head=4).to(DEVICE) # 模型
 model.load_state_dict(torch.load('model.pth'))
 
 # 生成噪音图
